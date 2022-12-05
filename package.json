@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@parcel/transformer-typescript-tsc": "^2.8.0",
+    "@parcel/validator-typescript": "^2.8.0",
+    "buffer": "^5.7.1",
+    "parcel": "^2.8.0"
+  },
+  "dependencies": {
+    "axios": "^1.2.0"
+  }
+}
