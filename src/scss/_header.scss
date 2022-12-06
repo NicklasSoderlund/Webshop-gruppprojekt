@@ -1,6 +1,9 @@
   @use "mixins" as m;
   a {
     color: #000;
+     span {
+      font-size: 0.8em;
+    } 
   }
   
   /* header */
