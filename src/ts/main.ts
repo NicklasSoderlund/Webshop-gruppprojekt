@@ -1,3 +1,43 @@
-//test
+import { Product } from "./models/product";
 
-let test = 0;
+let products = [
+    new Product(new URL("https://imgur.com/a/wLShfuG"), 
+    "SAMSUNG Q70B QLED Smart TV",
+    "4K",
+    "120Hz",
+    "65''",
+    "TV"),
+    new Product(new URL("https://imgur.com/a/c6mBJcK"),
+    "SHARP 55BL2EA UHD Android TV",
+    "4K",
+    "50Hz",
+    "55''",
+    "TV"),
+    new Product(new URL("https://imgur.com/a/Rg7ld86"),
+    "SHARP 43EL4EA Android TV",
+    "4K",
+    "50Hz",
+    "43''",
+    "TV"),
+
+    new Product(new URL("https://imgur.com/a/M8JTHlj"),
+    "MSI Optix G273QF - Gamingskärm",
+    "WQHD",
+    "165Hz",
+    "27''",
+    "Monitor"),
+    new Product(new URL("https://imgur.com/a/GnGLFyR"),
+    "AOC 25G3ZM/BK",
+    "Full HD",
+    "240Hz",
+    "24.5''",
+    "Monitor"),
+    new Product(new URL("https://imgur.com/a/GnGLFyR"),
+    "ACER Nitro XV272L",
+    "Full HD",
+    "144Hz",
+    "27''",
+    "Monitor"),
+]
+
+console.log(products);
