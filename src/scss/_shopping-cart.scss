@@ -1,0 +1,42 @@
+#shopping-cart {
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position:unset;
+    width: 100%;
+    margin-bottom: 5%;
+    top: 50px;
+    z-index: 2;
+    &__products {
+     border : 1px solid black;
+        ul {
+            list-style-type: none;
+            padding: 0px 20px;
+            border-bottom: 1px solid black;
+            li {
+                padding: 3px 0px;
+            }
+        }
+        #arrows {
+            display: inline;
+            border: none;
+            padding: 0;
+            height: fit-content;
+            width: fit-content;
+        }
+        #totalPrice {
+            border-bottom: 1px solid black;
+        }
+    }
+}
+
+.productAmount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  
+}

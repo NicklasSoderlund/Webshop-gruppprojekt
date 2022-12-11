@@ -1,8 +1,11 @@
 @use "header";
 @use "footer";
 
+@use "shopping-cart";
+
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: Helvetica, sans-serif;
   // background-color: #f4f4f4;
   background-color: white;
@@ -12,7 +15,7 @@ header {
   top: 0px;
 }
 
-img {
+/*  img {
   width: 100%;
   background-size: contain;
   position: relative;
@@ -58,3 +61,4 @@ h4 {
     height: 25vh;
   }
 }
+  */
