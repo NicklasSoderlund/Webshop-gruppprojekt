@@ -92,7 +92,7 @@ function createShoppingCart() {
     let newDiv = document.createElement("div");
     newDiv.setAttribute("id", "totalPrice")
     let newh5 = document.createElement("h5");
-    newh5.innerHTML = "Totalt: " + totalPrice;
+    newh5.innerHTML = "Totalt: " + totalPrice + " SEK";
     newDiv.appendChild(newh5);
     shoppingCart.appendChild(newDiv);
 }
