@@ -55,6 +55,7 @@ let products = [
 function createShoppingCart() {
     let shoppingCart = document.getElementById("shopping-cart__products") as HTMLDivElement;
     let totalPrice = 0;
+    shoppingCart.innerHTML = "";
     for (let i = 0; i < products.length; i++) {
 
         totalPrice += products[i].price;
@@ -76,7 +77,15 @@ function createShoppingCart() {
        secondUl.setAttribute("id", "arrows")
        let arrowUp = document.createElement("li");
        arrowUp.innerHTML = "<i class=\"fa-solid fa-arrow-up\"></i>";
+       arrowUp.addEventListener("click", () => {
+        products[i].amount ++;
+        createShoppingCart();
+       })
        let arrowDown = document.createElement("li");
+       arrowDown.addEventListener("click", () => {
+        products[i].amount --;
+        createShoppingCart();
+       })
        arrowDown.innerHTML = "<i class=\"fa-solid fa-arrow-down\"></i>";
        
        secondUl.appendChild(arrowUp);
