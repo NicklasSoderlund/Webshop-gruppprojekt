@@ -1,3 +1,4 @@
+@use "mixins" as m;
 #shopping-cart {
     display: flex;
     flex-wrap: wrap; 
@@ -12,10 +13,20 @@
     z-index: 2;
     &__products {
      border : 1px solid black;
+     @include m.desktop {
+        width: 80%;
+     }
         ul {
             list-style-type: none;
             padding: 0px 20px;
             border-bottom: 1px solid black;
+            @include m.desktop {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
+
+            }
             li {
                 padding: 3px 0px;
             }
@@ -33,6 +44,13 @@
     }
 }
 
+.productName {
+    @include m.desktop {
+        width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
 .productAmount {
     display: flex;
     justify-content: center;
