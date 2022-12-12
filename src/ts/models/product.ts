@@ -4,8 +4,9 @@ export class Product {
         public quality:string, 
         public inches:string,
         public hz:string, 
-        public price:string,
-        public category:string) {
+        public price:number,
+        public category:string,
+        public amount:number) {
     }
     
 }

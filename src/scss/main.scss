@@ -2,8 +2,11 @@
 @use "footer";
 @use "index";
 
+@use "shopping-cart";
+
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: Helvetica, sans-serif;
   background-color: #f4f4f4;
 }

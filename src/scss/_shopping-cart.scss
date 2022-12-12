@@ -1,0 +1,85 @@
+@use "mixins" as m;
+#shopping-cart {
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position:unset;
+    width: 100%;
+    margin-bottom: 5%;
+    top: 50px;
+    z-index: 2;
+    &__products {
+     border : 1px solid black;
+     @include m.desktop {
+        width: 80%;
+     }
+        ul {
+            list-style-type: none;
+            padding: 0px 20px;
+            border-bottom: 1px solid black;
+            @include m.desktop {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+                
+
+            }
+            li {
+                padding: 3px 0px;
+            }
+        }
+        #arrows {
+            display: inline;
+            border: none;
+            padding: 0;
+            height: fit-content;
+            width: fit-content;
+        }
+        #totalPrice {
+            border-bottom: 1px solid black;
+        }
+    }
+}
+
+.productName {
+    @include m.desktop {
+        width: 165px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+.productAmount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  
+}
+
+.productPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+
+    button {
+        background-color: red;
+    }
+}
+
+#totalPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 10px;
+
+    h5 {
+        margin: 0;
+    }
+}
