@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Webbshop</title>
     <link rel="stylesheet" href="/src/scss/main.scss" />
     <script defer type="module" src="/src/ts/main.ts"></script>
     <script
@@ -44,7 +44,26 @@
     </header>
 
     <main>
-      <form></form>
+      <h1 id="kassah1">Betalning med kort</h1>
+      <form>
+        <label for="kassanamn">Namn</label>
+        <input id="kassanamn" type="text" placeholder="Namn" />
+        <label for="kassakortnummer">Kortnummer</label>
+        <input id="kassakortnummer" type="text" placeholder="Kortnummer" />
+        <!-- <label for="kassagiltighetsdatum">Giltighetsdatum</label> -->
+        <div class="kassa-giltig-cvc">
+          <label for="kassagiltighetsdatum">Giltighetsdatum</label>
+          <input
+            id="kassagiltighetsdatum-cvc"
+            type="text"
+            placeholder="Giltighetsdatum"
+          />
+          <label for="kassagiltighetsdatum-cvc">CVC</label>
+
+          <input id="kassagiltighetsdatum-cvc" type="text" placeholder="CVC" />
+        </div>
+        <button id="kassaknapp">Slutför köp</button>
+      </form>
     </main>
 
     <footer id="footer">

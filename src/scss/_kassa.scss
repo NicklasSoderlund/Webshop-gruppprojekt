@@ -3,3 +3,70 @@
 
 // Knapp bakgrundsfärg färgkod #17A300
 // Knapp
+
+#kassah1 {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  font-size: 30px;
+  top: 100px;
+}
+
+form {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin: auto;
+  flex-direction: column;
+  width: 400px;
+  background-color: #d9d9d9;
+  top: 100px;
+
+  label {
+    font-size: 18px;
+  }
+  #kassanamn {
+    display: flex;
+    position: relative;
+    margin: auto;
+    width: 300px;
+    height: 50px;
+  }
+
+  #kassakortnummer {
+    display: flex;
+    position: relative;
+    margin: auto;
+    width: 300px;
+    height: 50px;
+  }
+
+  div.kassa-giltig-cvc {
+    display: flex;
+    position: relative;
+  }
+
+  #kassagiltighetsdatum-cvc {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 93px;
+    height: 30px;
+    margin: auto;
+  }
+
+  #kassaknapp {
+    display: flex;
+    position: relative;
+    width: 150px;
+    height: 45px;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: #17a300;
+    color: white;
+    font-size: 28px;
+    border: 2px #17a300;
+  }
+}
