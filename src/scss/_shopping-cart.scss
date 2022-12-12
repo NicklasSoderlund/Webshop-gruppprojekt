@@ -40,3 +40,27 @@
     gap: 10px;
   
 }
+
+.productPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+
+    button {
+        background-color: red;
+    }
+}
+
+#totalPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 10px;
+
+    h5 {
+        margin: 0;
+    }
+}

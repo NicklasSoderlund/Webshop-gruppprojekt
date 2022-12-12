@@ -65,9 +65,13 @@ function createShoppingCart() {
        let productAmount = document.createElement("li");
        let productPrice = document.createElement("li");
        productName.innerHTML = products[i].name;
-       let amountString = JSON.stringify(products[i].amount)
-       productAmount.innerHTML = amountString + " st";
-       productPrice.innerHTML = JSON.stringify(products[i].price) + " SEK";
+       productAmount.innerHTML = JSON.stringify(products[i].amount) + " st";
+       productPrice.innerHTML = "<span>" + JSON.stringify(products[i].price) + " SEK" + "</span";
+       let deleteButton = document.createElement("button");
+       deleteButton.innerHTML = "Ta Bort";
+       productPrice.appendChild(deleteButton);
+
+
 
        productName.setAttribute("class", "productName");
        productAmount.setAttribute("class", "productAmount");
@@ -102,7 +106,13 @@ function createShoppingCart() {
     newDiv.setAttribute("id", "totalPrice")
     let newh5 = document.createElement("h5");
     newh5.innerHTML = "Totalt: " + totalPrice + " SEK";
+    let toCheckoutButton = document.createElement("button");
+    toCheckoutButton.innerHTML = "Till Kassan";
+    let toCheckoutButtonAnchor = document.createElement("a");
+    toCheckoutButtonAnchor.setAttribute("href", "kassa.html")
+    toCheckoutButtonAnchor.appendChild(toCheckoutButton);
     newDiv.appendChild(newh5);
+    newDiv.appendChild(toCheckoutButtonAnchor);
     shoppingCart.appendChild(newDiv);
 }
 createShoppingCart();
