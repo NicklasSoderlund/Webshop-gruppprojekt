@@ -58,19 +58,24 @@ function createShoppingCart() {
     shoppingCart.innerHTML = "";
     for (let i = 0; i < products.length; i++) {
 
-        totalPrice += products[i].price;
+        totalPrice += products[i].price * products[i].amount;
         
        let newUl = document.createElement("ul");
        let productName = document.createElement("li");
        let productAmount = document.createElement("li");
        let productPrice = document.createElement("li");
        productName.innerHTML = products[i].name;
-       productAmount.innerHTML = JSON.stringify(products[i].amount) + " st";
-       productPrice.innerHTML = "<span>" + JSON.stringify(products[i].price) + " SEK" + "</span";
+       productAmount.innerHTML = " st" + "<span>" + JSON.stringify(products[i].amount) + "</span>";
+       let currentPrice = + products[i].price * products[i].amount;
+       productPrice.innerHTML = "<span>" + JSON.stringify(currentPrice)+ " SEK" + "</span";
        let deleteButton = document.createElement("button");
        deleteButton.innerHTML = "Ta Bort";
        deleteButton.addEventListener("click", () => {
-          products.splice
+            let currentObject = products[i];
+            let currentObjectIndex = products.indexOf(currentObject);
+           products.splice(currentObjectIndex, 1);
+           createShoppingCart();
+          
        })
        productPrice.appendChild(deleteButton);
 
@@ -90,6 +95,9 @@ function createShoppingCart() {
        })
        let arrowDown = document.createElement("li");
        arrowDown.addEventListener("click", () => {
+        if (products[i].amount === 1) {
+            return;
+        }
         products[i].amount --;
         createShoppingCart();
        })
@@ -105,6 +113,7 @@ function createShoppingCart() {
        shoppingCart.appendChild(newUl);
 
     }
+
     let newDiv = document.createElement("div");
     newDiv.setAttribute("id", "totalPrice")
     let newh5 = document.createElement("h5");

@@ -14,7 +14,7 @@
     &__products {
      border : 1px solid black;
      @include m.desktop {
-        width: 80%;
+        width: 70%;
      }
         ul {
             list-style-type: none;
@@ -54,9 +54,14 @@
 }
 .productAmount {
     display: flex;
+    flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    span {
+        border: 1px solid black;
+        padding: 2px 4px;
+    }
   
 }
 
@@ -65,7 +70,11 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+    @include m.desktop {
+       span {
 
+       width:110px;  }
+    }
 
     button {
         background-color: red;
