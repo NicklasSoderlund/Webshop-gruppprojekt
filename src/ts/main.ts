@@ -69,6 +69,9 @@ function createShoppingCart() {
        productPrice.innerHTML = "<span>" + JSON.stringify(products[i].price) + " SEK" + "</span";
        let deleteButton = document.createElement("button");
        deleteButton.innerHTML = "Ta Bort";
+       deleteButton.addEventListener("click", () => {
+          products.splice
+       })
        productPrice.appendChild(deleteButton);
 
 
@@ -117,6 +120,5 @@ function createShoppingCart() {
 }
 createShoppingCart();
 
-let arrowupIcon = "<i class=\"fa-solid fa-arrow-down\"></i>"
 
 console.log(products);
