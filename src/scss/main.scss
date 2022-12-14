@@ -1,9 +1,16 @@
 @use "header";
 @use "footer";
 @use "index";
+
+@use "shopping-cart";
+
 @use "kassa";
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: Helvetica, sans-serif;
   background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
