@@ -8,7 +8,7 @@ let products = [
     "65''",
     5000,
     "TV",
-    0),
+    1),
     new Product(new URL("https://imgur.com/a/c6mBJcK"),
     "SHARP 55BL2EA UHD Android TV",
     "4K",
@@ -16,7 +16,7 @@ let products = [
     "55''",
     3000,
     "TV",
-    0),
+    1),
     new Product(new URL("https://imgur.com/a/Rg7ld86"),
     "SHARP 43EL4EA Android TV",
     "4K",
@@ -24,7 +24,7 @@ let products = [
     "43''",
     4000,
     "TV",
-    0),
+    1),
 
     new Product(new URL("https://imgur.com/a/M8JTHlj"),
     "MSI Optix G273QF - Gamingskärm",
@@ -33,7 +33,7 @@ let products = [
     "27''",
     4000,
     "Monitor",
-    0),
+    1),
     new Product(new URL("https://imgur.com/a/GnGLFyR"),
     "AOC 25G3ZM/BK",
     "Full HD",
@@ -41,7 +41,7 @@ let products = [
     "24.5''",
     4500,
     "Monitor",
-    0),
+    1),
     new Product(new URL("https://imgur.com/a/GnGLFyR"),
     "ACER Nitro XV272L",
     "Full HD",
@@ -49,7 +49,7 @@ let products = [
     "27''",
     2500,
     "Monitor",
-    0),
+    1),
 ]
 
 function createShoppingCart() {
