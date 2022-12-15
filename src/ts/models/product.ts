@@ -1,5 +1,5 @@
 export class Product {
-    constructor(public image:URL, 
+    constructor(public image:string, 
         public name:string,
         public quality:string, 
         public inches:string,
