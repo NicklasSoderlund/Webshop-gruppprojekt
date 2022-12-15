@@ -46,6 +46,8 @@ let products = [
     "Monitor"),
 ]
 
+let shoppingCart:Product[] = [];
+
 function checkStorage() {
     if (localStorage.getItem("shoppingCart") === null) {
         localStorage.setItem("shoppingCart", "")
@@ -80,7 +82,14 @@ function createProductsHTML() {
         productPrice.innerHTML = JSON.stringify(products[i].price);
         addToCart.innerHTML = "Lägg till i <i class=\"fa-solid fa-basket-shopping\">"
         addToCart.addEventListener("click", () => {
-            // localStorage.setItem("")
+           
+            for (let index = 0; index < shoppingCart.length; index++) {
+                if (shoppingCart[index] === products[i]) {
+                    // shoppingCart[index].amount ++;
+                }
+            }
+            shoppingCart.push(products[i]);
+            localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
         } )
 
         productBottomContainer.appendChild(productPrice);
