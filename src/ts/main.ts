@@ -80,7 +80,7 @@ function createProductsHTML() {
         productPrice.innerHTML = JSON.stringify(products[i].price);
         addToCart.innerHTML = "Lägg till i <i class=\"fa-solid fa-basket-shopping\">"
         addToCart.addEventListener("click", () => {
-            localStorage.setItem("")
+            // localStorage.setItem("")
         } )
 
         productBottomContainer.appendChild(productPrice);
