@@ -7,21 +7,24 @@ let products = [
     "120Hz",
     "65\"",
     5000,
-    "TV"),
+    "TV",
+    1),
     new Product("https://i.imgur.com/4K1Vgp8.png",
     "SHARP 55BL2EA UHD Android TV",
     "4K",
     "50Hz",
     "55\"",
     3000,
-    "TV"),
+    "TV",
+    1),
     new Product("https://i.imgur.com/qhScFyv.png",
     "SHARP 43EL4EA Android TV",
     "4K",
     "50Hz",
     "43\"",
     4000,
-    "TV"),
+    "TV",
+    1),
 
     new Product("https://i.imgur.com/NFj2lxF.png",
     "MSI Optix G273QF - Gamingskärm",
@@ -29,30 +32,43 @@ let products = [
     "165Hz",
     "27\"",
     4000,
-    "Monitor"),
+    "Monitor",
+    1),
     new Product("https://i.imgur.com/trakBW3.png",
     "AOC 25G3ZM/BK",
     "Full HD",
     "240Hz",
     "24.5\"",
     4500,
-    "Monitor"),
+    "Monitor",
+    1),
     new Product("https://i.imgur.com/QFcEtH5.png",
     "ACER Nitro XV272L",
     "Full HD",
     "144Hz",
     "27\"",
     2500,
-    "Monitor"),
+    "Monitor",
+    1),
 ]
 
 let shoppingCart:Product[] = [];
 
 function checkStorage() {
-    if (localStorage.getItem("shoppingCart") === null) {
-        localStorage.setItem("shoppingCart", "")
+        let currentStorage = localStorage.getItem("shoppingcart");
+        let currentCart:Product[] = JSON.parse(currentStorage as string); 
+        console.log(currentCart);
+        if (currentCart === null) {
+            return
+            
+        }
+        else {
+        for (let i = 0; i < currentCart.length; i++) {
+            shoppingCart.push(currentCart[i]);            
+        }
     }
-}
+ }
+checkStorage();
 
 function createProductsHTML() {
     let monitorsContainer = document.getElementById("product-page__monitors") as HTMLElement;
@@ -85,8 +101,11 @@ function createProductsHTML() {
            
             for (let index = 0; index < shoppingCart.length; index++) {
                 if (shoppingCart[index] === products[i]) {
-                    // shoppingCart[index].amount ++;
+                     shoppingCart[i].amount ++;
+                     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+                     return
                 }
+                
             }
             shoppingCart.push(products[i]);
             localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
@@ -113,4 +132,4 @@ function createProductsHTML() {
 }
 createProductsHTML()
 
-console.log(products);
+
