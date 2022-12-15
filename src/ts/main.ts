@@ -52,28 +52,49 @@ let products = [
     1),
 ]
 
+let shoppingCartList:Product[] = [];
+
+function checkStorage() {
+        let currentStorage = localStorage.getItem("shoppingCart");
+        let currentCart:Product[] = JSON.parse(currentStorage as string); 
+        console.log(currentCart);
+        if (currentCart === null) {
+            return
+            
+        }
+        else {
+        for (let i = 0; i < currentCart.length; i++) {
+            shoppingCartList.push(currentCart[i]);            
+        }
+    }
+    console.log(shoppingCartList)
+ }
+checkStorage();
+
+if (window.location.href.match('varukorg.html') != null) {
+
 function createShoppingCart() {
     let shoppingCart = document.getElementById("shopping-cart__products") as HTMLDivElement;
     let totalPrice = 0;
     shoppingCart.innerHTML = "";
-    for (let i = 0; i < products.length; i++) {
+    for (let i = 0; i < shoppingCartList.length; i++) {
 
-        totalPrice += products[i].price * products[i].amount;
+        totalPrice += shoppingCartList[i].price * shoppingCartList[i].amount;
         
        let newUl = document.createElement("ul");
        let productName = document.createElement("li");
        let productAmount = document.createElement("li");
        let productPrice = document.createElement("li");
-       productName.innerHTML = products[i].name;
-       productAmount.innerHTML = " st" + "<span>" + JSON.stringify(products[i].amount) + "</span>";
-       let currentPrice = + products[i].price * products[i].amount;
+       productName.innerHTML = shoppingCartList[i].name;
+       productAmount.innerHTML = " st" + "<span>" + JSON.stringify(shoppingCartList[i].amount) + "</span>";
+       let currentPrice = + shoppingCartList[i].price * shoppingCartList[i].amount;
        productPrice.innerHTML = "<span>" + JSON.stringify(currentPrice)+ " SEK" + "</span";
        let deleteButton = document.createElement("button");
        deleteButton.innerHTML = "Ta Bort";
        deleteButton.addEventListener("click", () => {
-            let currentObject = products[i];
-            let currentObjectIndex = products.indexOf(currentObject);
-           products.splice(currentObjectIndex, 1);
+            let currentObject = shoppingCartList[i];
+            let currentObjectIndex = shoppingCartList.indexOf(currentObject);
+           shoppingCartList.splice(currentObjectIndex, 1);
            createShoppingCart();
           
        })
@@ -90,15 +111,17 @@ function createShoppingCart() {
        let arrowUp = document.createElement("li");
        arrowUp.innerHTML = "<i class=\"fa-solid fa-arrow-up\"></i>";
        arrowUp.addEventListener("click", () => {
-        products[i].amount ++;
+        shoppingCartList[i].amount ++;
+        localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartList));
         createShoppingCart();
        })
        let arrowDown = document.createElement("li");
        arrowDown.addEventListener("click", () => {
-        if (products[i].amount === 1) {
+        if (shoppingCartList[i].amount === 1) {
             return;
         }
-        products[i].amount --;
+        shoppingCartList[i].amount --;
+        localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartList));
         createShoppingCart();
        })
        arrowDown.innerHTML = "<i class=\"fa-solid fa-arrow-down\"></i>";
@@ -127,125 +150,16 @@ function createShoppingCart() {
     newDiv.appendChild(toCheckoutButtonAnchor);
     shoppingCart.appendChild(newDiv);
 }
-createShoppingCart();
+ createShoppingCart();
+ console.log(shoppingCartList);
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let shoppingCart:Product[] = [];
-
-function checkStorage() {
-        let currentStorage = localStorage.getItem("shoppingcart");
-        let currentCart:Product[] = JSON.parse(currentStorage as string); 
-        console.log(currentCart);
-        if (currentCart === null) {
-            return
-            
-        }
-        else {
-        for (let i = 0; i < currentCart.length; i++) {
-            shoppingCart.push(currentCart[i]);            
-        }
-    }
- }
-checkStorage();
-
+if (window.location.href.match('produkter.html') != null) {
 function createProductsHTML() {
-    let monitorsContainer = document.getElementById("product-page__monitors") as HTMLElement;
-    let tvScreensContainer = document.getElementById("product-page__tv-screens") as HTMLElement;
+    let monitorsContainer = document.getElementById("product-page__monitors") as HTMLUListElement;
+    let tvScreensContainer = document.getElementById("product-page__tv-screens") as HTMLUListElement;
  
 
     for (let i = 0; i < products.length; i++) {
@@ -271,17 +185,19 @@ function createProductsHTML() {
         productPrice.innerHTML = JSON.stringify(products[i].price);
         addToCart.innerHTML = "Lägg till i <i class=\"fa-solid fa-basket-shopping\">"
         addToCart.addEventListener("click", () => {
-           
-            for (let index = 0; index < shoppingCart.length; index++) {
-                if (shoppingCart[index] === products[i]) {
-                     shoppingCart[i].amount ++;
-                     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+
+          
+            for (let index = 0; index < shoppingCartList.length; index++) {
+                if (shoppingCartList[index].name === products[i].name) {
+                     shoppingCartList[index].amount ++;
+                     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartList));
                      return
                 }
-                
-            }
-            shoppingCart.push(products[i]);
-            localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+            }   
+            shoppingCartList.push(products[i]);
+            localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartList));
+
+             
         } )
 
         productBottomContainer.appendChild(productPrice);
@@ -299,10 +215,14 @@ function createProductsHTML() {
         productContainer.appendChild(productBottomContainer);
 
         productLi.appendChild(productContainer);
+        if (products[i].category === "Monitor") {
         monitorsContainer.appendChild(productLi);
-        
+        }
+        if (products[i].category === "TV") {
+            tvScreensContainer.appendChild(productLi)
+        }
     }
 }
 createProductsHTML()
 
-
+}
