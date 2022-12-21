@@ -82,6 +82,7 @@ label {
   display: flex;
   width: 300px;
   height: 40px;
+  border: none;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   justify-content: center;
@@ -90,14 +91,12 @@ label {
   background: linear-gradient(33deg, white, lightgreen, white);
   color: white;
   font-size: 28px;
-  border: 2px #17a300;
   cursor: pointer;
 }
 
 #kassaknapp:hover {
   cursor: pointer;
-  background-color: green;
-  border: 2px solid green;
+  background: green;
   color: white;
 }
 
@@ -148,7 +147,6 @@ label {
   #kassaknapp:hover {
     cursor: pointer;
     background: green;
-    border: 2px solid green;
     color: black;
     border: none;
   }
