@@ -1,7 +1,3 @@
-main {
-  margin-top: 5px;
-}
-
 .diven {
   flex-direction: row;
   place-content: center;
@@ -123,10 +119,6 @@ label {
 }
 
 @media screen and (min-width: 960px) {
-  main {
-    margin-top: 75px;
-  }
-
   form {
     display: flex;
     width: 400px;
