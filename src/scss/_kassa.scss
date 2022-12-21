@@ -76,10 +76,9 @@ label {
 }
 
 #gcbehållare {
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-content: center;
+  display: flex;
   align-items: center;
 }
 

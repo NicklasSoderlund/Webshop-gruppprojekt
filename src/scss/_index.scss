@@ -15,6 +15,7 @@
 }
 
 a {
+  display: contents;
   text-decoration: none;
 }
 
@@ -28,8 +29,10 @@ a {
   width: 130px;
   height: 60px;
   margin: auto;
-  background-color: black;
+  background-color: #c4c4c4;
   text-decoration: none;
+  border-radius: 5px;
+  border: none;
   color: white;
   cursor: pointer;
 }
@@ -50,8 +53,7 @@ a {
     transform: translateY(-100%);
     justify-content: center;
     background-color: rgb(196, 196, 196);
-    border: 2px solid rgb(196, 196, 196);
-    color: black;
+    color: white;
     font-size: 27px;
     height: 60px;
     width: 200px;
