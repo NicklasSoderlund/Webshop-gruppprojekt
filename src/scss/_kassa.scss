@@ -32,7 +32,7 @@ form {
   border-radius: 15px;
 }
 label {
-  font-size: 25px;
+  font-size: 17px;
 }
 
 #kassanamn {
@@ -57,29 +57,23 @@ label {
 }
 
 #kassagiltighetsdatum {
+  display: flex;
   width: 100px;
   height: 25px;
+  border-radius: 5px;
   border: none;
-  display: flex;
-  align-items: center;
-  align-content: center;
 }
 
 #kassagiltighetsdatum-cvc {
-  width: 70px;
+  display: flex;
+  width: 100px;
   border: none;
   border-radius: 5px;
-  display: flex;
-  width: 50px;
   height: 25px;
-  border: none;
 }
 
 #gcbehållare {
-  flex-direction: row;
-  justify-content: center;
   display: flex;
-  align-items: center;
 }
 
 #kassaknapp {
@@ -105,18 +99,6 @@ label {
   color: white;
 }
 
-#namngiltighetsdatum {
-  display: flex;
-  position: relative;
-  left: 40px;
-}
-
-#namncvc {
-  display: flex;
-  position: relative;
-  left: 45px;
-}
-
 @media screen and (min-width: 960px) {
   form {
     display: flex;
@@ -137,12 +119,12 @@ label {
 
   #kassagiltighetsdatum,
   #kassagiltighetsdatum-cvc {
-    display: flex;
     width: 100px;
-    height: 20px;
-    font-size: 19px;
-    border-radius: 5px;
+    height: 30px;
     border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
   }
 
   #kassaknapp {
@@ -170,7 +152,7 @@ label {
   }
 
   label {
-    font-size: 35px;
+    font-size: 30px;
     display: flex;
     justify-content: center;
   }
