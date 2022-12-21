@@ -46,26 +46,28 @@
     <main>
       <h1 id="kassah1">Betalning med kort</h1>
       <form>
-        <label for="kassanamn">Namn:</label>
-        <input id="kassanamn" type="text" placeholder="Namn" />
-        <label for="kassakortnummer">Kortnummer:</label>
-        <input id="kassakortnummer" type="text" placeholder="Kortnummer" />
-        <!-- <label for="kassagiltighetsdatum">Giltighetsdatum</label> -->
-        <div class="kassa-giltig-cvc">
-          <label id="namngiltighetsdatum" for="kassagiltighetsdatum"
-            >Giltighetsdatum:</label
-          >
-          <!-- <label for="kassagiltighetsdatum-cvc">CVC</label> -->
-          <input
-            id="kassagiltighetsdatum"
-            type="text"
-            placeholder="Giltighetsdatum"
-          />
-          <label id="namncvc" for="kassagiltighetsdatum-cvc">CVC:</label>
+        <div class="diven">
+          <div id="behållare1">
+            <label for="kassanamn">Namn</label>
+            <input id="kassanamn" type="text" placeholder="Namn" />
+          </div>
 
-          <input id="kassagiltighetsdatum-cvc" type="text" placeholder="CVC" />
+          <div id="behållare2">
+            <label for="kassakortnummer">Kortnummer</label>
+            <input id="kassakortnummer" type="text" placeholder="Kortnummer" />
+          </div>
+
+          <div id="gcbehållare">
+            <label for="kassagiltighetsdatum">Giltighetsdatum</label>
+            <input id="kassagiltighetsdatum" type="text" />
+          </div>
+
+          <div id="gcbehållare">
+            <label for="kassagiltighetsdatum-cvc">CVC</label>
+            <input id="kassagiltighetsdatum-cvc" type="text" />
+          </div>
         </div>
-        <button id="kassaknapp">Slutför köp</button>
+        <button id="kassaknapp" type="button">Slutför köp</button>
       </form>
     </main>
 
