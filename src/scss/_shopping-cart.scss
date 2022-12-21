@@ -92,3 +92,90 @@
         margin: 0;
     }
 }
+
+
+
+// Checkout shoppingcart
+
+#shopping-cart-checkout {
+    display: flex;
+    flex-wrap: wrap; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: fit-content;
+    top: 50px;
+    border: 1px solid black;
+    &__products-checkout {
+     border : 1px solid black;
+        ul {
+            list-style-type: none;
+            padding: 0px 20px;
+            border-bottom: 1px solid black;          
+
+            }
+            li {
+                padding: 3px 0px;
+            }
+        }
+        #arrows {
+            display: inline;
+            border: none;
+            padding: 0;
+            height: fit-content;
+            width: fit-content;
+        }
+        #totalPrice {
+            border-bottom: 1px solid black;
+        }
+    }
+
+
+.productName {
+    @include m.desktop {
+        width: 165px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+.productAmount {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    span {
+        border: 1px solid black;
+        padding: 2px 4px;
+    }
+  
+}
+
+.productPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    @include m.desktop {
+       span {
+
+       width:110px;  }
+    }
+
+    button {
+        background-color: red;
+    }
+}
+
+#totalPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 10px;
+
+    h5 {
+        margin: 0;
+    }
+}

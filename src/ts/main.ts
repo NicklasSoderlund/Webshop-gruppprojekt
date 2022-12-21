@@ -225,3 +225,79 @@ function createProductsHTML() {
 createProductsHTML()
 
 }
+
+
+if (window.location.href.match('kassa.html') != null) {
+    function createShoppingCart() {
+        let shoppingCart = document.getElementById("shopping-cart__products-checkout") as HTMLDivElement;
+        let totalPrice = 0;
+        shoppingCart.innerHTML = "";
+        for (let i = 0; i < shoppingCartList.length; i++) {
+    
+            totalPrice += shoppingCartList[i].price * shoppingCartList[i].amount;
+            
+           let newUl = document.createElement("ul");
+           let productName = document.createElement("li");
+           let productAmount = document.createElement("li");
+           let productPrice = document.createElement("li");
+           productName.innerHTML = shoppingCartList[i].name;
+           productAmount.innerHTML = " st" + "<span>" + JSON.stringify(shoppingCartList[i].amount) + "</span>";
+           let currentPrice = + shoppingCartList[i].price * shoppingCartList[i].amount;
+           productPrice.innerHTML = "<span>" + JSON.stringify(currentPrice)+ " SEK" + "</span";
+           let deleteButton = document.createElement("button");
+           deleteButton.innerHTML = "Ta Bort";
+           deleteButton.addEventListener("click", () => {
+                let currentObject = shoppingCartList[i];
+                let currentObjectIndex = shoppingCartList.indexOf(currentObject);
+               shoppingCartList.splice(currentObjectIndex, 1);
+               createShoppingCart();
+              
+           })
+           productPrice.appendChild(deleteButton);
+    
+    
+    
+           productName.setAttribute("class", "productName");
+           productAmount.setAttribute("class", "productAmount");
+           productPrice.setAttribute("class", "productPrice");
+    
+           let secondUl = document.createElement("ul");
+           secondUl.setAttribute("id", "arrows")
+           let arrowUp = document.createElement("li");
+           arrowUp.innerHTML = "<i class=\"fa-solid fa-arrow-up\"></i>";
+           arrowUp.addEventListener("click", () => {
+            shoppingCartList[i].amount ++;
+            localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartList));
+            createShoppingCart();
+           })
+           let arrowDown = document.createElement("li");
+           arrowDown.addEventListener("click", () => {
+            if (shoppingCartList[i].amount === 1) {
+                return;
+            }
+            shoppingCartList[i].amount --;
+            localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartList));
+            createShoppingCart();
+           })
+           arrowDown.innerHTML = "<i class=\"fa-solid fa-arrow-down\"></i>";
+           
+           secondUl.appendChild(arrowUp);
+           secondUl.appendChild(arrowDown);
+           
+           productAmount.appendChild(secondUl);
+           newUl.appendChild(productName);
+           newUl.appendChild(productAmount);
+           newUl.appendChild(productPrice);
+           shoppingCart.appendChild(newUl);
+    
+        }
+    
+        let newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "totalPrice")
+        let newh5 = document.createElement("h5");
+        newh5.innerHTML = "Totalt: " + totalPrice + " SEK";
+        newDiv.appendChild(newh5);
+        shoppingCart.appendChild(newDiv);
+    }
+     createShoppingCart();
+}
