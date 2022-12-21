@@ -91,7 +91,7 @@ label {
   justify-content: center;
   text-align: center;
   align-items: center;
-  background-color: #17a300;
+  background: linear-gradient(33deg, white, lightgreen, white);
   color: white;
   font-size: 28px;
   border: 2px #17a300;
@@ -151,7 +151,7 @@ label {
     text-align: center;
     color: black;
     cursor: pointer;
-    background: linear-gradient(33deg, white, green, white);
+    background: linear-gradient(33deg, white, lightgreen, white);
     border: 2px #17a300;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -172,7 +172,6 @@ label {
   label {
     font-size: 35px;
     display: flex;
-    margin-left: auto;
     justify-content: center;
   }
 }
