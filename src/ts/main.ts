@@ -151,7 +151,6 @@ function createShoppingCart() {
     shoppingCart.appendChild(newDiv);
 }
  createShoppingCart();
- console.log(shoppingCartList);
 }
 
 
@@ -182,7 +181,7 @@ function createProductsHTML() {
         let productBottomContainer = document.createElement("div");
         let productPrice = document.createElement("h6");
         let addToCart = document.createElement("button");
-        productPrice.innerHTML = JSON.stringify(products[i].price);
+        productPrice.innerHTML = JSON.stringify(products[i].price) + " SEK";
         addToCart.innerHTML = "Lägg till i <i class=\"fa-solid fa-basket-shopping\">"
         addToCart.addEventListener("click", () => {
 
