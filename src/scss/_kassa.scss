@@ -119,7 +119,12 @@ label {
 }
 
 @media screen and (min-width: 960px) {
+  main {
+    margin-top: 75px;
+  }
+
   form {
+    display: flex;
     width: 400px;
     height: 350px;
   }
