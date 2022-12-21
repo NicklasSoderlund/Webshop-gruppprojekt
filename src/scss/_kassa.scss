@@ -4,191 +4,180 @@
 // Knapp bakgrundsfärg färgkod #17A300
 // Knapp
 
+.diven {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
 #kassah1 {
   display: flex;
   position: relative;
   justify-content: center;
   font-size: 40px;
-  top: 60px;
 }
 
 form {
   position: relative;
-  width: 400px;
-  background-color: rgba(78, 140, 255, 0.374);
+  width: 300px;
+  background: linear-gradient(
+    10deg,
+    white,
+    lightblue,
+    cornflowerblue,
+    lightblue,
+    white
+  );
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   margin: auto;
   display: flex;
-  height: 330px;
-  top: 35px;
+  height: 300px;
   border-radius: 15px;
-  box-shadow: 0 0.5rem 0.5rem #000;
+}
+label {
+  font-size: 20px;
+}
 
-  label {
-    position: relative;
-    left: 20px;
-    font-size: 20px;
-  }
-  #kassanamn {
-    display: flex;
-    position: relative;
-    margin: auto;
-    width: 300px;
-    height: 50px;
-    font-size: 30px;
-    border-radius: 5px;
-  }
+#kassanamn {
+  display: flex;
+  margin: auto;
+  width: 250px;
+  height: 50px;
+  font-size: 30px;
+  border: none;
+}
 
-  #kassakortnummer {
-    display: flex;
-    position: relative;
-    margin: auto;
-    width: 300px;
-    height: 50px;
-    font-size: 30px;
-    border-radius: 5px;
-  }
+#kassakortnummer {
+  display: flex;
+  margin: auto;
+  width: 250px;
+  height: 50px;
+  font-size: 30px;
+  border: none;
+}
 
-  #formulärnamn {
-    font-size: 30px;
-  }
+#kassagiltighetsdatum {
+  display: flex;
+  width: 50px;
+  border: none;
+}
 
-  div.kassa-giltig-cvc {
-    display: flex;
-    position: relative;
-  }
+#kassagiltighetsdatum-cvc {
+  display: flex;
+  width: 50px;
+  border: none;
+}
 
-  #kassagiltighetsdatum {
-    display: inline;
-    position: relative;
-    width: 92px;
-    height: 30px;
-    top: 25px;
-    right: 80px;
-    border-radius: 5px;
-  }
+#gcbehållare {
+  display: flex;
+}
 
-  #kassagiltighetsdatum-cvc {
-    display: inline;
-    position: relative;
-    flex-direction: row;
-    width: 92px;
-    height: 30px;
-    margin: auto;
-    top: 25px;
-    right: 30px;
-    justify-content: center;
-    border-radius: 5px;
-  }
+#kassaknapp {
+  display: flex;
+  width: 300px;
+  height: 40px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #17a300;
+  color: white;
+  font-size: 28px;
+  border: 2px #17a300;
+  cursor: pointer;
+}
 
-  #kassaknapp {
-    display: flex;
-    position: relative;
-    width: 400px;
-    height: 55px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    margin: auto;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    background-color: #17a300;
-    color: white;
-    font-size: 28px;
-    top: 15px;
-    border: 2px #17a300;
+#kassaknapp:hover {
+  cursor: pointer;
+  background-color: green;
+  border: 2px solid green;
+  color: white;
+}
 
-    cursor: pointer;
-  }
+#namngiltighetsdatum {
+  display: flex;
+  position: relative;
+  left: 40px;
+}
 
-  #kassaknapp:hover {
-    cursor: pointer;
-    background-color: green;
-    border: 2px solid green;
-    color: black;
-  }
-
-  #namngiltighetsdatum {
-    display: flex;
-    position: relative;
-    left: 40px;
-  }
-
-  #namncvc {
-    display: flex;
-    position: relative;
-    left: 45px;
-  }
+#namncvc {
+  display: flex;
+  position: relative;
+  left: 45px;
 }
 
 @media screen and (max-width: 960px) {
-  form {
-    width: 300px;
-    height: 330px;
-    background-color: #4e8cff5f;
-    border-radius: 15px;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    display: flex;
-    position: relative;
-    top: 35px;
-    box-shadow: 0 0.5rem 0.5rem #000;
-  }
+  // form {
+  //   width: 300px;
+  //   height: 330px;
+  //   background-color: #4e8cff5f;
+  //   border-radius: 15px;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   margin: auto;
+  //   display: flex;
+  //   position: relative;
+  //   top: 35px;
+  //   box-shadow: 0 0.5rem 0.5rem #000;
+  // }
 
-  #kassah1 {
-    justify-content: center;
-    font-size: 35px;
-    display: flex;
-    position: relative;
-    top: 50px;
-  }
+  // #kassah1 {
+  //   justify-content: center;
+  //   font-size: 35px;
+  //   display: flex;
+  //   position: relative;
+  //   top: 50px;
+  // }
 
-  form #namngiltighetsdatum {
-    display: flex;
-    position: relative;
-    font-size: 18px;
-    left: 17px;
-  }
+  // form #namngiltighetsdatum {
+  //   display: flex;
+  //   position: relative;
+  //   font-size: 18px;
+  //   left: 17px;
+  // }
 
-  form #namncvc {
-    display: flex;
-    position: relative;
-    left: -55px;
-  }
+  // form #namncvc {
+  //   display: flex;
+  //   position: relative;
+  //   left: -55px;
+  // }
 
-  form #kassanamn,
-  form #kassakortnummer {
-    display: flex;
-    position: relative;
-    border-radius: 5px;
-    width: 250px;
-    height: 30px;
-    margin: auto;
-    font-size: 30px;
-  }
+  // form #kassanamn,
+  // form #kassakortnummer {
+  //   display: flex;
+  //   position: relative;
+  //   border-radius: 5px;
+  //   width: 250px;
+  //   height: 30px;
+  //   margin: auto;
+  //   font-size: 30px;
+  // }
 
-  form #kassaknapp {
-    width: 300px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    top: 22px;
-  }
+  // form #kassaknapp {
+  //   width: 300px;
+  //   border-bottom-left-radius: 15px;
+  //   border-bottom-right-radius: 15px;
+  //   top: 22px;
+  // }
 
-  form #kassagiltighetsdatum {
-    border-radius: 5px;
-    width: 92px;
-    height: 30px;
-    top: 25px;
-    right: 110px;
-  }
+  // form #kassagiltighetsdatum {
+  //   border-radius: 5px;
+  //   width: 92px;
+  //   height: 30px;
+  //   top: 25px;
+  //   right: 110px;
+  // }
 
-  form #kassagiltighetsdatum-cvc {
-    border-radius: 5px;
-    width: 92px;
-    height: 30px;
-    top: 25px;
-    right: 100px;
-  }
+  // form #kassagiltighetsdatum-cvc {
+  //   border-radius: 5px;
+  //   width: 92px;
+  //   height: 30px;
+  //   top: 25px;
+  //   right: 100px;
+  // }
 }
