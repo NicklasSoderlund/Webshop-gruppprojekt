@@ -73,6 +73,10 @@ label {
 
 #gcbehållare {
   display: flex;
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
 }
 
 #kassaknapp {
