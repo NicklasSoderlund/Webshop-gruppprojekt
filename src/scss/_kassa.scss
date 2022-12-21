@@ -60,19 +60,27 @@ label {
 }
 
 #kassagiltighetsdatum {
-  display: flex;
-  width: 50px;
+  width: 100px;
+  height: 25px;
   border: none;
+  display: flex;
+  align-items: center;
+  align-content: center;
 }
 
 #kassagiltighetsdatum-cvc {
   display: flex;
   width: 50px;
+  height: 25px;
   border: none;
 }
 
 #gcbehållare {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 #kassaknapp {
