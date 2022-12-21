@@ -31,8 +31,9 @@ form {
   height: 300px;
   border-radius: 15px;
 }
+
 label {
-  font-size: 17px;
+  font-size: 25px;
 }
 
 #kassanamn {
@@ -74,6 +75,7 @@ label {
 
 #gcbehållare {
   display: flex;
+  gap: 20px;
 }
 
 #kassaknapp {
