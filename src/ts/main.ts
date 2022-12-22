@@ -57,7 +57,6 @@ let shoppingCartList:Product[] = [];
 function checkStorage() {
         let currentStorage = localStorage.getItem("shoppingCart");
         let currentCart:Product[] = JSON.parse(currentStorage as string); 
-        console.log(currentCart);
         if (currentCart === null) {
             return
             
@@ -67,7 +66,6 @@ function checkStorage() {
             shoppingCartList.push(currentCart[i]);            
         }
     }
-    console.log(shoppingCartList)
  }
 checkStorage();
 
