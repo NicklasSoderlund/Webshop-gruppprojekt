@@ -99,30 +99,40 @@
 
 #shopping-cart-checkout {
     display: flex;
-    flex-wrap: wrap; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     width: fit-content;
-    top: 50px;
     border: 1px solid black;
-    &__products-checkout {
-     border : 1px solid black;
-        ul {
-            list-style-type: none;
-            padding: 0px 20px;
-            border-bottom: 1px solid black;          
 
-            }
-            li {
-                padding: 3px 0px;
-            }
+    @include m.desktop {
+        width: 300px;
+    }
+    #shopping-cart__products-checkout {
+
+        @include m.desktop {
+            width: inherit;
         }
+      ul {
+        border-bottom: 1px solid black;
+        padding: 0;
+        padding-bottom: 0.5em;
+        list-style-type: none;
+        @include m.desktop {
+            padding-bottom: 0.8em;
+        }
+        ul {
+            border: none;
+            padding-bottom: 0;
+        }
+      }
+    }
         #arrows {
             display: inline;
             border: none;
             padding: 0;
+            padding-bottom: 0em;
             height: fit-content;
             width: fit-content;
         }
@@ -133,10 +143,9 @@
 
 
 .productName {
-    @include m.desktop {
-        width: 165px;
-        display: flex;
-        flex-wrap: wrap;
+     @include m.desktop {
+        width: fit-content;
+        margin: auto;
     }
 }
 .productAmount {
