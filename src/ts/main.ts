@@ -255,7 +255,7 @@ if (window.location.href.match('kassa.html') != null) {
     
     
     
-           productName.setAttribute("class", "productName");
+           productName.setAttribute("class", "productNameCheckout");
            productAmount.setAttribute("class", "productAmount");
            productPrice.setAttribute("class", "productPrice");
     
