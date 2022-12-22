@@ -43,46 +43,56 @@
       </ul>
     </header>
 
-    <main>
-      <h1 id="kassah1">Betalning med kort</h1>
-      <form>
-        <div class="diven">
-          <div id="behållare1">
-            <label for="kassanamn">Namn</label>
-            <input id="kassanamn" type="text" placeholder="Namn" />
-          </div>
+    <section id="checkoutpage">
+      <section id="shopping-cart-checkout">
+        <div id="shopping-cart__products-checkout"></div>
+      </section>
 
-          <div id="behållare2">
-            <label for="kassakortnummer">Kortnummer</label>
-            <input id="kassakortnummer" type="text" placeholder="Kortnummer" />
-          </div>
+      <main>
+        <h1 id="kassah1">Betalning med kort</h1>
+        <form>
+          <div class="diven">
+            <div id="behållare1">
+              <label for="kassanamn">Namn</label>
+              <input id="kassanamn" type="text" placeholder="Namn" />
+            </div>
 
-          <div id="gcbehållare">
-            <div class="flytta">
-              <label for="kassagiltighetsdatum" style="font-size: 20px"
-                >Giltighetsdatum</label
-              >
+            <div id="behållare2">
+              <label for="kassakortnummer">Kortnummer</label>
               <input
-                id="kassagiltighetsdatum"
+                id="kassakortnummer"
                 type="text"
-                placeholder="Giltighetsdatum"
+                placeholder="Kortnummer"
               />
             </div>
-            <div class="flytta">
-              <label for="kassagiltighetsdatum-cvc" style="font-size: 20px"
-                >CVC</label
-              >
-              <input
-                id="kassagiltighetsdatum-cvc"
-                type="text"
-                placeholder="CVC"
-              />
+
+            <div id="gcbehållare">
+              <div class="flytta">
+                <label for="kassagiltighetsdatum" style="font-size: 20px"
+                  >Giltighetsdatum</label
+                >
+                <input
+                  id="kassagiltighetsdatum"
+                  type="text"
+                  placeholder="Giltighetsdatum"
+                />
+              </div>
+              <div class="flytta">
+                <label for="kassagiltighetsdatum-cvc" style="font-size: 20px"
+                  >CVC</label
+                >
+                <input
+                  id="kassagiltighetsdatum-cvc"
+                  type="text"
+                  placeholder="CVC"
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <button id="kassaknapp" type="submit">Slutför köp</button>
-      </form>
-    </main>
+          <button id="kassaknapp" type="submit">Slutför köp</button>
+        </form>
+      </main>
+    </section>
 
     <footer id="footer">
       <section id="footer__contact">
