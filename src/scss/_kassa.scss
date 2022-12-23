@@ -166,10 +166,12 @@ label {
   justify-content: center;
   text-align: center;
   padding-top: 1em;
+  padding-bottom: 2em;
   @include m.desktop {
     flex-direction: row;
     gap: 10%;
     padding-top: 2em;
+    padding-bottom: 4em;
   }
 }
 
