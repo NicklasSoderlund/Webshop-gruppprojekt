@@ -172,6 +172,7 @@ label {
     gap: 10%;
     padding-top: 2em;
     padding-bottom: 4em;
+    height: 70vh;
   }
 }
 
@@ -188,10 +189,23 @@ left: 0;
 right: 0;
 text-align: center;
   
-  width: 80%;
+  width: fit-content;
   height: fit-content;
   z-index: 10;
-  background-color: brown;
+  background-color: black;
+  color: white;
+  padding: 1.5em;
+  #receipt-details {
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+  }
+
+  #receipt-close {
+    text-align: right;
+    margin: 0;
+  }
   
 
 }
