@@ -126,6 +126,10 @@ function createShoppingCart() {
        
        secondUl.appendChild(arrowUp);
        secondUl.appendChild(arrowDown);
+
+       if (i % 2 ) {
+        newUl.classList.add("evenRow")
+       }
        
        productAmount.appendChild(secondUl);
        newUl.appendChild(productName);
@@ -281,6 +285,10 @@ if (window.location.href.match('kassa.html') != null) {
            
            secondUl.appendChild(arrowUp);
            secondUl.appendChild(arrowDown);
+
+           if (i % 2 ) {
+            newUl.classList.add("evenRow")
+           }
            
            productAmount.appendChild(secondUl);
            newUl.appendChild(productName);
