@@ -172,6 +172,41 @@ label {
     gap: 10%;
     padding-top: 2em;
     padding-bottom: 4em;
+    height: 70vh;
   }
+}
+
+#receipt-container {
+  display:none;
+  position: absolute;
+  margin-left: auto;
+margin-right: auto;
+margin-top: auto;
+margin-bottom: auto;
+top:0;
+bottom: 0;
+left: 0;
+right: 0;
+text-align: center;
+  
+  width: fit-content;
+  height: fit-content;
+  z-index: 10;
+  background-color: black;
+  color: white;
+  padding: 1.5em;
+  #receipt-details {
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+  }
+
+  #receipt-close {
+    text-align: right;
+    margin: 0;
+  }
+  
+
 }
 

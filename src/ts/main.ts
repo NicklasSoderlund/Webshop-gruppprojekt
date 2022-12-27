@@ -298,4 +298,58 @@ if (window.location.href.match('kassa.html') != null) {
         shoppingCart.appendChild(newDiv);
     }
      createShoppingCart();
-}
+
+     let button = document.getElementById("kassaknapp") as HTMLButtonElement;
+     button.addEventListener("click", (e) => {
+        e.preventDefault();
+        let nameInput = document.getElementById("kassanamn") as HTMLInputElement;
+        let cardInput = document.getElementById("kassakortnummer") as HTMLInputElement;
+        let dateInput = document.getElementById("kassagiltighetsdatum") as HTMLInputElement;
+        let cvcInput = document.getElementById("kassagiltighetsdatum-cvc") as HTMLInputElement;
+
+        if (shoppingCartList.length < 1) {
+            window.alert("Varukorgen är tom")
+            return
+        }
+        
+         if (nameInput.value === "" || (cardInput.value === "") || (dateInput.value === "") || (cvcInput.value === ""))  {
+            window.alert("Vänligen fyll i hela betalformuläret");
+         }
+         else {
+            let receipt = document.getElementById("receipt-details") as HTMLDivElement;
+            let newUl = document.createElement("ul");
+            let totalPrice = 0;
+            for (let i = 0; i < shoppingCartList.length; i++) {
+                totalPrice += shoppingCartList[i].price;
+                let newLi = document.createElement("li");
+                let amount = shoppingCartList[i].amount;
+                newLi.innerHTML = JSON.stringify(amount) + " x " + shoppingCartList[i].name;
+                newUl.appendChild(newLi);
+            }
+            let newH3 = document.createElement("h3");
+            newH3.innerHTML = "Betalt Belopp: " + JSON.stringify(totalPrice) + " SEK"
+            receipt.appendChild(newUl);
+            receipt.appendChild(newH3);
+
+            let displayToggle = document.getElementById("receipt-container") as HTMLDivElement;
+            displayToggle.style.display = "block";
+
+            let receiptClose = document.getElementById("receipt-close") as HTMLParagraphElement;
+            receiptClose.addEventListener("click", () => {
+                displayToggle.remove();
+            })
+            shoppingCartList = [];
+            localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartList));
+            createShoppingCart();
+
+            nameInput.value = "";
+            cardInput.value = "";
+            dateInput.value = "";
+            cvcInput.value = "";
+
+            }
+          })
+        
+      }
+
+
