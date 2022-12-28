@@ -315,13 +315,30 @@ if (window.location.href.match('kassa.html') != null) {
         let dateInput = document.getElementById("kassagiltighetsdatum") as HTMLInputElement;
         let cvcInput = document.getElementById("kassagiltighetsdatum-cvc") as HTMLInputElement;
 
-        if (shoppingCartList.length < 1) {
+        if (shoppingCartList.length < 1) {   
             window.alert("Varukorgen är tom")
             return
         }
+
+        if (cardInput.value.length < 13 || cardInput.value.length > 16) {
+            window.alert("Vänligen fyll i ett giltigt kortnummer (13-16 siffror)")
+            return
+        }
+        const rExp : RegExp = /[A-C]/g;
+        let pattern = /^(0[1-9]|1[012])\/\d{2}$/;
+        if (pattern.test(dateInput.value) !== true) {
+            window.alert("Vänligen fyll i korrekt datum (MM/YY)")
+        }
+
+        if (cvcInput.value.length !== 3) {
+            window.alert("Vänligen fyll i giltigt cvc-nummer (3 siffror)")
+            return
+        }
+
         
          if (nameInput.value === "" || (cardInput.value === "") || (dateInput.value === "") || (cvcInput.value === ""))  {
             window.alert("Vänligen fyll i hela betalformuläret");
+            return
          }
          else {
             let receipt = document.getElementById("receipt-details") as HTMLDivElement;

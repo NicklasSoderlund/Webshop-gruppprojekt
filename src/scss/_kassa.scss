@@ -210,3 +210,6 @@ text-align: center;
 
 }
 
+input:invalid {
+  border: red solid 3px;
+}
