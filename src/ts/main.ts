@@ -315,6 +315,8 @@ if (window.location.href.match('kassa.html') != null) {
         let dateInput = document.getElementById("kassagiltighetsdatum") as HTMLInputElement;
         let cvcInput = document.getElementById("kassagiltighetsdatum-cvc") as HTMLInputElement;
 
+
+
         if (shoppingCartList.length < 1) {   
             window.alert("Varukorgen är tom")
             return
@@ -377,4 +379,24 @@ if (window.location.href.match('kassa.html') != null) {
         
       }
 
+      //Validators
+
+      let cardInput = document.getElementById("kassakortnummer") as HTMLInputElement;
+
+      cardInput.addEventListener("keydown", () => {
+           if (cardInput.value.length > cardInput.maxLength) {
+            cardInput.value = cardInput.value.slice(0, cardInput.maxLength);
+           }
+    } )
+
+    let cvcInput = document.getElementById("kassagiltighetsdatum-cvc") as HTMLInputElement;
+    cvcInput.addEventListener("keydown", () => {
+        if (cvcInput.value.length > cvcInput.maxLength) {
+         cvcInput.value = cvcInput.value.slice(0, cvcInput.maxLength);
+        }
+ } )
+
+   
+       
+      
 
