@@ -1,5 +1,5 @@
 import { Product } from "./models/product";
-
+// #region Product Objects
 let products = [
     new Product("https://i.imgur.com/yc4KP66.png", 
     "SAMSUNG Q70B QLED Smart TV",
@@ -51,7 +51,9 @@ let products = [
     "Monitor",
     1),
 ]
+//#endregion
 
+// #region Check LocalStorage
 let shoppingCartList:Product[] = [];
 
 function checkStorage() {
@@ -68,7 +70,9 @@ function checkStorage() {
     }
  }
 checkStorage();
+//#endregion
 
+// #region ShoppingCart Function
 if (window.location.href.match('varukorg.html') != null) {
 
 function createShoppingCart() {
@@ -182,9 +186,9 @@ function createShoppingCart() {
 }
  createShoppingCart();
 }
+//#endregion
 
-
-
+// #region Product Function
 if (window.location.href.match('produkter.html') != null) {
 function createProductsHTML() {
     let monitorsContainer = document.getElementById("product-page__monitors") as HTMLUListElement;
@@ -253,10 +257,10 @@ function createProductsHTML() {
     }
 }
 createProductsHTML()
-
 }
+//#endregion
 
-
+// #region Checkout ShoppingCart Function
 if (window.location.href.match('kassa.html') != null) {
     function createShoppingCart() {
         let shoppingCart = document.getElementById("shopping-cart__products-checkout") as HTMLDivElement;
@@ -362,7 +366,9 @@ if (window.location.href.match('kassa.html') != null) {
         shoppingCart.appendChild(newDiv);
     }
      createShoppingCart();
+     //#endregion
 
+// #region Checkout ReceiptFunction and Validators
      let button = document.getElementById("kassaknapp") as HTMLButtonElement;
      button.addEventListener("click", (e) => {
         e.preventDefault();
@@ -452,6 +458,7 @@ if (window.location.href.match('kassa.html') != null) {
         }
  } )
       }
+//#endregion
    
        
       

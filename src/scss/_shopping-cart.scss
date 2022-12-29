@@ -14,7 +14,7 @@
     &__products {
      border : 1px solid black;
      @include m.desktop {
-        width: 70%;
+        width: 55%;
         text-align: left;
      }
         ul {
