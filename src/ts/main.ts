@@ -86,13 +86,26 @@ function createShoppingCart() {
        productName.innerHTML = shoppingCartList[i].name;
        productAmount.innerHTML = " st" + "<span>" + JSON.stringify(shoppingCartList[i].amount) + "</span>";
        let currentPrice = + shoppingCartList[i].price * shoppingCartList[i].amount;
-       productPrice.innerHTML = "<span>" + JSON.stringify(currentPrice)+ " SEK" + "</span";
+       let priceString = JSON.stringify(currentPrice);
+       let newPriceString = "";
+       if (priceString.length === 5) {
+       newPriceString = priceString.slice(0,2) + "," + priceString.slice(2);
+       }
+       if (priceString.length === 6) {
+       newPriceString = priceString.slice(0,3) + "," + priceString.slice(3);
+      }
+      if (priceString.length < 5 || priceString.length > 6) {
+        newPriceString = priceString;
+       }
+
+       productPrice.innerHTML = "<span>" + newPriceString + " SEK" + "</span";
        let deleteButton = document.createElement("button");
        deleteButton.innerHTML = "Ta Bort";
        deleteButton.addEventListener("click", () => {
             let currentObject = shoppingCartList[i];
             let currentObjectIndex = shoppingCartList.indexOf(currentObject);
            shoppingCartList.splice(currentObjectIndex, 1);
+           localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartList));
            createShoppingCart();
           
        })
@@ -142,9 +155,24 @@ function createShoppingCart() {
     let newDiv = document.createElement("div");
     newDiv.setAttribute("id", "totalPrice")
     let newh5 = document.createElement("h5");
-    newh5.innerHTML = "Totalt: " + totalPrice + " SEK";
+    let totalPriceString = JSON.stringify(totalPrice);
+        let newTotalPriceString = "";
+        if (totalPriceString.length === 5) {
+        newTotalPriceString = totalPriceString.slice(0,2) + "," + totalPriceString.slice(2);
+        }
+        if (totalPriceString.length === 6) {
+        newTotalPriceString = totalPriceString.slice(0,3) + "," + totalPriceString.slice(3);
+        
+       }
+       if (totalPriceString.length < 5 || totalPriceString.length > 6) {
+        newTotalPriceString = JSON.stringify(totalPrice);
+        console.log(newTotalPriceString);
+       }
+ 
+
+    newh5.innerHTML = "Totalt: " + newTotalPriceString  + " SEK";
     let toCheckoutButton = document.createElement("button");
-    toCheckoutButton.innerHTML = "Till Kassan";
+    toCheckoutButton.innerHTML = "Till Kassa";
     let toCheckoutButtonAnchor = document.createElement("a");
     toCheckoutButtonAnchor.setAttribute("href", "kassa.html")
     toCheckoutButtonAnchor.appendChild(toCheckoutButton);
@@ -245,13 +273,26 @@ if (window.location.href.match('kassa.html') != null) {
            productName.innerHTML = shoppingCartList[i].name;
            productAmount.innerHTML = " st" + "<span>" + JSON.stringify(shoppingCartList[i].amount) + "</span>";
            let currentPrice = + shoppingCartList[i].price * shoppingCartList[i].amount;
-           productPrice.innerHTML = "<span>" + JSON.stringify(currentPrice)+ " SEK" + "</span";
+           let priceString = JSON.stringify(currentPrice);
+       let newPriceString = "";
+       if (priceString.length === 5) {
+       newPriceString = priceString.slice(0,2) + "," + priceString.slice(2);
+       }
+       if (priceString.length === 6) {
+       newPriceString = priceString.slice(0,3) + "," + priceString.slice(3);
+      }
+      if (priceString.length < 5 || priceString.length > 6) {
+        newPriceString = priceString;
+       }
+
+       productPrice.innerHTML = "<span>" + newPriceString + " SEK" + "</span";
            let deleteButton = document.createElement("button");
            deleteButton.innerHTML = "Ta Bort";
            deleteButton.addEventListener("click", () => {
                 let currentObject = shoppingCartList[i];
                 let currentObjectIndex = shoppingCartList.indexOf(currentObject);
                shoppingCartList.splice(currentObjectIndex, 1);
+               localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartList));
                createShoppingCart();
               
            })
@@ -301,7 +342,22 @@ if (window.location.href.match('kassa.html') != null) {
         let newDiv = document.createElement("div");
         newDiv.setAttribute("id", "totalPrice")
         let newh5 = document.createElement("h5");
-        newh5.innerHTML = "Totalt: " + totalPrice + " SEK";
+        
+        let totalPriceString = JSON.stringify(totalPrice);
+        let newTotalPriceString = "";
+        if (totalPriceString.length === 5) {
+        newTotalPriceString = totalPriceString.slice(0,2) + "," + totalPriceString.slice(2);
+        }
+        if (totalPriceString.length === 6) {
+        newTotalPriceString = totalPriceString.slice(0,3) + "," + totalPriceString.slice(3);
+        
+       }
+       if (totalPriceString.length < 5 || totalPriceString.length > 6) {
+        newTotalPriceString = JSON.stringify(totalPrice);
+        console.log(newTotalPriceString);
+       }
+ 
+        newh5.innerHTML = "Totalt: " + newTotalPriceString + " SEK";
         newDiv.appendChild(newh5);
         shoppingCart.appendChild(newDiv);
     }
@@ -380,7 +436,7 @@ if (window.location.href.match('kassa.html') != null) {
       }
 
       //Validators
-
+      if (window.location.href.match('kassa.html') != null) {
       let cardInput = document.getElementById("kassakortnummer") as HTMLInputElement;
 
       cardInput.addEventListener("keydown", () => {
@@ -395,7 +451,7 @@ if (window.location.href.match('kassa.html') != null) {
          cvcInput.value = cvcInput.value.slice(0, cvcInput.maxLength);
         }
  } )
-
+      }
    
        
       
