@@ -1,0 +1,47 @@
+@use "mixins" as m;
+
+#footer {
+    position:relative;
+    bottom: 0px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 1px -1px 4px 0 rgba(0,0,0,.1);
+    gap: 1em;
+    padding: 1em 0;
+    background-color: #fff;
+    margin-top: auto;
+
+    @include m.desktop {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15em;
+        padding: 2em 0;
+
+    }
+ 
+   &__contact {
+    display: flex;
+    flex-direction: column;
+       text-align: left;
+       gap: 1em;
+       @include m.desktop {
+        flex-direction: row;
+        gap: 15em;
+    }
+   }
+
+   &__adress {
+        display: flex;
+        gap: 1em;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    span {
+        font-weight: 600;
+        width: fit-content;
+    }
+}

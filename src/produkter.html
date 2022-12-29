@@ -4,9 +4,69 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Webbshop</title>
     <link rel="stylesheet" href="/src/scss/main.scss" />
     <script defer type="module" src="/src/ts/main.ts"></script>
+    <script
+      src="https://kit.fontawesome.com/892b849216.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <a href="" class="logo"
+        ><i class="fa-solid fa-shop"></i><span> SCREENSHOP</span></a
+      >
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"
+        ><span class="navicon"></span
+      ></label>
+      <ul class="menu">
+        <li>
+          <a href="index.html">Hem <i class="fa-solid fa-house"></i></a>
+        </li>
+        <li>
+          <a href="produkter.html"
+            >Våra Produkter <i class="fa-solid fa-display"></i
+          ></a>
+        </li>
+        <li>
+          <a href="varukorg.html"
+            >Varukorg <i class="fa-solid fa-basket-shopping"></i
+          ></a>
+        </li>
+        <li>
+          <a href="kassa.html"
+            >Kassa <i class="fa-solid fa-cash-register"></i
+          ></a>
+        </li>
+      </ul>
+    </header>
+
+    <section id="product-page">
+      <h2>Datorskärmar</h2>
+      <ul id="product-page__monitors"></ul>
+      <h2>TV-Skärmar</h2>
+      <ul id="product-page__tv-screens"></ul>
+    </section>
+
+    <footer id="footer">
+      <section id="footer__contact">
+        <div>
+          <i class="fa-solid fa-envelope"></i>
+          <span>fakemail@hotmail.com</span>
+        </div>
+        <div>
+          <i class="fa-solid fa-square-phone"></i>
+          <span>070 - 1337 69 69</span>
+        </div>
+      </section>
+      <div id="footer__adress">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Fakeroad 69</span>
+        <span id="middlespan">137-69</span>
+        <span>Stockholm, Sweden</span>
+      </div>
+    </footer>
+  </body>
 </html>

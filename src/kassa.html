@@ -4,9 +4,126 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Webbshop</title>
     <link rel="stylesheet" href="/src/scss/main.scss" />
     <script defer type="module" src="/src/ts/main.ts"></script>
+    <script
+      src="https://kit.fontawesome.com/892b849216.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <a href="" class="logo"
+        ><i class="fa-solid fa-shop"></i><span> SCREENSHOP</span></a
+      >
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"
+        ><span class="navicon"></span
+      ></label>
+      <ul class="menu">
+        <li>
+          <a href="index.html">Hem <i class="fa-solid fa-house"></i></a>
+        </li>
+        <li>
+          <a href="produkter.html"
+            >Våra Produkter <i class="fa-solid fa-display"></i
+          ></a>
+        </li>
+        <li>
+          <a href="varukorg.html"
+            >Varukorg <i class="fa-solid fa-basket-shopping"></i
+          ></a>
+        </li>
+        <li>
+          <a href="kassa.html"
+            >Kassa <i class="fa-solid fa-cash-register"></i
+          ></a>
+        </li>
+      </ul>
+    </header>
+
+    <section id="checkoutpage">
+      <div>
+        <h2>Varukorg</h2>
+        <section id="shopping-cart-checkout">
+          <div id="shopping-cart__products-checkout"></div>
+        </section>
+      </div>
+
+      <main>
+        <h1 id="kassah1">Betalning med kort</h1>
+        <form method="post" action="kvitto.html">
+          <div class="diven">
+            <div id="behållare1">
+              <label for="kassanamn">Namn</label>
+              <input id="kassanamn" type="text" placeholder="Namn" />
+            </div>
+
+            <div id="behållare2">
+              <label for="kassakortnummer">Kortnummer</label>
+              <input
+                id="kassakortnummer"
+                type="number"
+                placeholder="Kortnummer"
+                maxlength="15"
+              />
+            </div>
+
+            <div id="gcbehållare">
+              <div class="flytta">
+                <label for="kassagiltighetsdatum" style="font-size: 20px"
+                  >Giltighetsdatum</label
+                >
+                <input
+                  id="kassagiltighetsdatum"
+                  type="text"
+                  placeholder="Giltighetsdatum"
+                  maxlength="5"
+                />
+              </div>
+              <div class="flytta">
+                <label for="kassagiltighetsdatum-cvc" style="font-size: 20px"
+                  >CVC</label
+                >
+                <input
+                  id="kassagiltighetsdatum-cvc"
+                  placeholder="CVC"
+                  type="number"
+                  maxlength="2"
+                />
+              </div>
+            </div>
+          </div>
+          <button id="kassaknapp" type="submit">Slutför köp</button>
+        </form>
+      </main>
+    </section>
+
+    <div id="receipt-container">
+      <p id="receipt-close"><i class="fa-solid fa-x"></i></p>
+
+      <h2>Tack för ditt köp!</h2>
+      <div id="receipt-details"></div>
+    </div>
+
+    <footer id="footer">
+      <section id="footer__contact">
+        <div>
+          <i class="fa-solid fa-envelope"></i>
+          <span>fakemail@hotmail.com</span>
+        </div>
+        <div>
+          <i class="fa-solid fa-square-phone"></i>
+          <span>070 - 1337 69 69</span>
+        </div>
+      </section>
+      <div id="footer__adress">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Fakeroad 69</span>
+        <span id="middlespan">137-69</span>
+        <span>Stockholm, Sweden</span>
+      </div>
+    </footer>
+  </body>
 </html>
