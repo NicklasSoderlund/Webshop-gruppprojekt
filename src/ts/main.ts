@@ -93,10 +93,10 @@ function createShoppingCart() {
        let priceString = JSON.stringify(currentPrice);
        let newPriceString = "";
        if (priceString.length === 5) {
-       newPriceString = priceString.slice(0,2) + "," + priceString.slice(2);
+       newPriceString = priceString.slice(0,2) + "." + priceString.slice(2);
        }
        if (priceString.length === 6) {
-       newPriceString = priceString.slice(0,3) + "," + priceString.slice(3);
+       newPriceString = priceString.slice(0,3) + "." + priceString.slice(3);
       }
       if (priceString.length < 5 || priceString.length > 6) {
         newPriceString = priceString;
@@ -162,10 +162,10 @@ function createShoppingCart() {
     let totalPriceString = JSON.stringify(totalPrice);
         let newTotalPriceString = "";
         if (totalPriceString.length === 5) {
-        newTotalPriceString = totalPriceString.slice(0,2) + "," + totalPriceString.slice(2);
+        newTotalPriceString = totalPriceString.slice(0,2) + "." + totalPriceString.slice(2);
         }
         if (totalPriceString.length === 6) {
-        newTotalPriceString = totalPriceString.slice(0,3) + "," + totalPriceString.slice(3);
+        newTotalPriceString = totalPriceString.slice(0,3) + "." + totalPriceString.slice(3);
         
        }
        if (totalPriceString.length < 5 || totalPriceString.length > 6) {
@@ -280,10 +280,10 @@ if (window.location.href.match('kassa.html') != null) {
            let priceString = JSON.stringify(currentPrice);
        let newPriceString = "";
        if (priceString.length === 5) {
-       newPriceString = priceString.slice(0,2) + "," + priceString.slice(2);
+       newPriceString = priceString.slice(0,2) + "." + priceString.slice(2);
        }
        if (priceString.length === 6) {
-       newPriceString = priceString.slice(0,3) + "," + priceString.slice(3);
+       newPriceString = priceString.slice(0,3) + "." + priceString.slice(3);
       }
       if (priceString.length < 5 || priceString.length > 6) {
         newPriceString = priceString;
@@ -350,10 +350,10 @@ if (window.location.href.match('kassa.html') != null) {
         let totalPriceString = JSON.stringify(totalPrice);
         let newTotalPriceString = "";
         if (totalPriceString.length === 5) {
-        newTotalPriceString = totalPriceString.slice(0,2) + "," + totalPriceString.slice(2);
+        newTotalPriceString = totalPriceString.slice(0,2) + "." + totalPriceString.slice(2);
         }
         if (totalPriceString.length === 6) {
-        newTotalPriceString = totalPriceString.slice(0,3) + "," + totalPriceString.slice(3);
+        newTotalPriceString = totalPriceString.slice(0,3) + "." + totalPriceString.slice(3);
         
        }
        if (totalPriceString.length < 5 || totalPriceString.length > 6) {
